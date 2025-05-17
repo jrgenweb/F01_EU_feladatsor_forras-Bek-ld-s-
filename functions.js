@@ -54,12 +54,27 @@ function evenkentiCsatlakozas(array) {
 
 /*
 
-Ha selectel oldanám meg
-function evekLekérdezése(array) {}
+Ha selectel oldanám meg a szűréseket
 
-function orszagnevekLekerdezes(array) {}
+*/
+function evekLekerdezese(array) {
+  let evek = new Set();
+  for (let orszag of array) {
+    let ev = orszag[1].split(".")[0];
+    evek.add(ev);
+  }
+  return Array.from(evek);
+}
 
-let honapNevek = [
+function orszagnevekLekerdezes(array) {
+  let orszagNevek = new Set();
+  for (let orszag of array) {
+    orszagNevek.add(orszag[0]);
+  }
+  return Array.from(orszagNevek);
+}
+
+const honapNevek = [
   "Január",
   "Február",
   "Március",
@@ -74,18 +89,15 @@ let honapNevek = [
   "December",
 ];
 function honapokLekerdezes(array) {
-  honapokObj = {};
-
+  let honapokObj = {};
   for (let orszag of array) {
-    let honap = Number(orszag[1].split(".")[1]);
-
-    if (honapokObj[honap]) {
-      honapokObj[honap] = honapNevek[honap];
-    }
+    let honapSzovegFormatum = orszag[1].split(".")[1];
+    let honap = Number(orszag[1].split(".")[1]) - 1;
+    console.log(honapNevek[honap]);
+    honapokObj[honapSzovegFormatum] = honapNevek[honap];
   }
-  console.log(honapokObj);
 }
-*/
+
 export {
   euTagokSzama,
   orszagLekerdezeseEvAlapjan,
@@ -93,5 +105,5 @@ export {
   orszagLekerdezeseNevAlapjan,
   utolsoCsatlakozas,
   evenkentiCsatlakozas,
-  //honapokLekerdezes,
+  honapokLekerdezes,
 };

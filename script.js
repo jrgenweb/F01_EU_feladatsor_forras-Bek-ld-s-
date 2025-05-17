@@ -5,6 +5,7 @@ import {
   orszagLekerdezeseNevAlapjan,
   utolsoCsatlakozas,
   evenkentiCsatlakozas,
+  honapokLekerdezes,
 } from "./functions.js";
 const adatok = `Ausztria;1995.01.01
 Belgium;1958.01.01
@@ -133,4 +134,4 @@ function feladat6Megjelenitese() {
 
 feladat6Megjelenitese();
 
-//honapokLekerdezes();
+honapokLekerdezes(euAdatok);
