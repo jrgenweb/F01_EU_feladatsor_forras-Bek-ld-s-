@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+.container {
+    max-width: 1000px;
+    margin-inline: auto;
+}
+
+div:has(.eredmeny) {
+    margin: 2rem;
+    margin-bottom: 4rem;
+}
+
+.eredmeny div:has(span) {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    gap: 1rem;
+    > span {
+        padding: 0.25rem;
+    }
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    > label {
+        margin-bottom: 1rem;
+    }
+}
+
+input {
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid grey;
+    outline: 0;
+}
